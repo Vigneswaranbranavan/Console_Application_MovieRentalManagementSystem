@@ -19,5 +19,7 @@ namespace MovieRentalManagementSystem
             Director = director;
             RentalPrice = rentalPrice;
         }
+
+        public override string ToString() { return $"ID: {MovieId}, Title: {Title}, Director: {Director}, RentalPrice: {RentalPrice}"; }
     }
 }
