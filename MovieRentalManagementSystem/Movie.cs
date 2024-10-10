@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace MovieRentalManagementSystem
 {
-    internal class Movie
+    public class Movie
     {
-        public int MovieId { get; set; }
+        public int MovieID { get; set; }
         public string Title { get; set; }
         public string Director { get; set; }
         public decimal RentalPrice { get; set; }
+
 
         public Movie(string title, string director, decimal rentalPrice)
         {
@@ -20,6 +21,16 @@ namespace MovieRentalManagementSystem
             RentalPrice = rentalPrice;
         }
 
-        public override string ToString() { return $"ID: {MovieId}, Title: {Title}, Director: {Director}, RentalPrice: {RentalPrice}"; }
+        public Movie() { }
+
+        public override string ToString()
+        {
+            return $"ID: {MovieID}, Title: {Title}, Director: {Director}, RentalPrice: ${RentalPrice}.00";
+        }
+
+        public virtual string displaymovieinfo()
+        {
+            return ToString();
+        }
     }
 }
